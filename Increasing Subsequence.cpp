@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
@@ -20,28 +20,33 @@ void domain_expension()
 {
     ll n;
     cin >> n;
-    vector<ll>s(n);
-    for(int i=0;i<n;i++) cin >> s[i];
+    vector<ll> s(n);
+    for (int i = 0; i < n; i++)
+        cin >> s[i];
 
     vector<ll> Incr;
-    for(auto x:s)
+    for (auto x : s)
     {
-        auto it = lower_bound(all(Incr),x);
+        auto it = lower_bound(all(Incr), x);
 
-        if(Incr.empty() or it==Incr.end()){
+        if (Incr.empty() or it == Incr.end())
+        {
             Incr.pb(x);
         }
-        else{
-            ll ind = it-Incr.begin();
-            Incr[ind]=x;
+        else
+        {
+            ll ind = it - Incr.begin();
+            Incr[ind] = x;
         }
     }
     cout << Incr.size() << endl;
 }
 int main()
 {
-    ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
- 
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
     domain_expension();
     return 0;
 }

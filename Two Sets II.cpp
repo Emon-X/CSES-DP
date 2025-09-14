@@ -39,7 +39,6 @@ void domain_expension()
         }
     }
 
-    // Modular inverse of 2 under mod
     ll inv2 = (mod + 1) / 2;
     cout << (dp[sum] * inv2) % mod << endl;
 }
